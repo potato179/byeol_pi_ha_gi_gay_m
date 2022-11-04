@@ -43,7 +43,7 @@ void DisplayStart(){
         }
 
         gotoxy(MAX_X/5, MAX_Y/2);
-        printf("�����Ϸ��� �ƹ�Ű�� ��������!");
+        printf("얘! 시작 를! 하려면 아무 키나 누르렴");
         Sleep(500);
         gotoxy(MAX_X/5, MAX_Y/2);
         printf("                                  ");
@@ -57,7 +57,7 @@ void DisplayGameScreen(){
         for(int x = 0; x < MAX_X; x += 2){
             if( x == 0 || y == 2 || x ==MAX_X-2 || y == MAX_Y -1){
                 gotoxy(x, y);
-                printf("��");
+                printf("ㅁ");
             }
 
             else{
@@ -78,7 +78,7 @@ void setPlayerPosition(int x, int dir){
         printf("  ");
     }
     gotoxy(x,MAX_Y-2);
-    printf("��");
+    printf("ㅗ");
 }
 
 void DisplayScore(int sc){
@@ -145,8 +145,8 @@ int main(){
 
 
     while(1){
-        DisplayStar(s,count);
-        if(count % 100 == 0){
+        DisplayStar(s, count);
+        if(count%2 == 0){
             DisplayScore(score++);
         }
 
@@ -164,9 +164,9 @@ int main(){
         if(CheckCursh(s,Player_xPosition)){
             system("cls");
             gotoxy(MAX_X/2-4,MAX_Y/2-1);
-            printf("���� ���� !");
+            printf("아이고난!!");
             gotoxy(MAX_X/2-4, MAX_Y/2);
-            printf("�������� :%2d", score);
+            printf("최종 점수는 %2d점이란맨이야", score);
             break;
         }
         Sleep(10);
